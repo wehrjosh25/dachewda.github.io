@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1A1736;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: #1A1736;
+    text-decoration: none;
+}
+
+main {
+    display: flex;
+    margin: 20px;
+}
+
+article {
+    flex: 3;
+    margin-right: 20px;
+}
+
+aside {
+    flex: 1;
+}
+
+footer {
+    background-color: #1A1736;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.intro-text {
+  margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #E8F080;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+  
+.button-link:hover {
+    background-color: #DA70D6;
+}
+
+.ad-space {
+    background-color: #f4f4f4;
+    padding: 10px;
+    text-align: center;
+    border: 1px dashed #ccc;
+}
+
+/*
+White: #FFFFFF
+Light Blue: #EBEAF6
+Snot: #E8F080
+Orchid: #DA70D6
+Deep Blue: #1A1736
+Black: #000000
+
+Magenta?: #a330a3
+Mauve: #E0B0FF
+Plum: #DDA0DD
+
+Ad Space: #f4f4f4
+Header/Footer: #fff
+Button: #007BFF
+Button Hover: #0056b3
+
+.button-link {
+  background-color: red;
+}
+*/
