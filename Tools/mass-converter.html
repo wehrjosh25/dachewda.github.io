@@ -5,44 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mass Unit Converter - Dachewda</title>
   <link rel="stylesheet" href="../Formatting.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    .converter-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 15px;
-      margin-top: 30px;
-      align-items: center;
-    }
-
-    .converter-grid input,
-    .converter-grid select {
-      width: 100%;
-      padding: 8px;
-      font-size: 1rem;
-    }
-
-    .result {
-      margin-top: 20px;
-      font-weight: bold;
-      text-align: center;
-    }
-  </style>
 </head>
-<body>
 
-  <h1>Mass Unit Converter</h1>
-  <p style="text-align: center;">Convert between English and Metric mass units.</p>
+<body>
+  <header>
+    <h1>Mass Unit Converter</h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html" class="button-link">Dachewda - Home Page</a></li>
+          <li><a href="../about.html" class="button-link-essential">About Us</a></li>
+          <li><a href="../contact.html" class="button-link-essential">Contact Us</a></li>
+          <li><a href="../privacy.html" class="button-link-essential">Privacy Policy</a></li>
+        </ul>
+      </nav> 
+  </header>
 
   <div class="converter-grid">
     <input type="number" id="inputValue" placeholder="Enter value" />
@@ -103,123 +79,9 @@
     document.getElementById('toUnit').addEventListener('change', convertMass);
   </script>
 
-</body>
-</html>
-
-
-<!--
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mass Unit Converter - Dachewda</title>
-  <link rel="stylesheet" href="../Formatting.css" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    .converter-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 15px;
-      margin-top: 30px;
-      align-items: center;
-    }
-
-    .converter-grid input,
-    .converter-grid select {
-      width: 100%;
-      padding: 8px;
-      font-size: 1rem;
-    }
-
-    .convert-btn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      font-size: 1rem;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      cursor: pointer;
-    }
-
-    .result {
-      margin-top: 20px;
-      font-weight: bold;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Mass Unit Converter</h1>
-  <p style="text-align: center;">Convert between English and Metric mass units.</p>
-
-  <div class="converter-grid">
-    <input type="number" id="inputValue" placeholder="Enter value" />
-    <select id="fromUnit">
-      <option value="oz">Ounces (oz)</option>
-      <option value="lb">Pounds (lb)</option>
-      <option value="ton">Tons (short)</option>
-      <option value="g">Grams (g)</option>
-      <option value="kg">Kilograms (kg)</option>
-      <option value="t">Metric Tons (t)</option>
-    </select>
-    <input type="text" id="outputValue" readonly />
-    <select id="toUnit">
-      <option value="g">Grams (g)</option>
-      <option value="kg">Kilograms (kg)</option>
-      <option value="t">Metric Tons (t)</option>
-      <option value="oz">Ounces (oz)</option>
-      <option value="lb">Pounds (lb)</option>
-      <option value="ton">Tons (short)</option>
-    </select>
-  </div>
-
-  <button class="convert-btn" onclick="convertMass()">Convert</button>
-
-  <p class="result" id="result"></p>
-
-  <script>
-    const conversionRates = {
-      oz: 28.3495,      // grams
-      lb: 453.592,      // grams
-      ton: 907184.74,   // grams (short ton)
-      g: 1,
-      kg: 1000,
-      t: 1_000_000
-    };
-
-    function convertMass() {
-      const inputValue = parseFloat(document.getElementById('inputValue').value);
-      const fromUnit = document.getElementById('fromUnit').value;
-      const toUnit = document.getElementById('toUnit').value;
-      const outputField = document.getElementById('outputValue');
-
-      if (isNaN(inputValue)) {
-        document.getElementById('result').textContent = "Please enter a valid number.";
-        outputField.value = '';
-        return;
-      }
-
-      const grams = inputValue * conversionRates[fromUnit];
-      const resultValue = grams / conversionRates[toUnit];
-
-      outputField.value = resultValue.toFixed(4);
-      document.getElementById('result').textContent = 
-        `${inputValue} ${fromUnit} = ${resultValue.toFixed(4)} ${toUnit}`;
-    }
-  </script>
+  <footer>
+    <p>&copy; 2025 Dachewda. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
--->

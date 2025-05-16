@@ -1,13 +1,41 @@
+/* Ensure full height layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Let main content grow to fill space */
+main {
+  flex: 1;
+  margin-left: 20px
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    padding: 5px;
 }
 
 header {
-    background-color: #1A1736;
-    color: #fff;
-    padding: 10px 20px;
+    background-color: hsl(235, 45%, 20%);
+    color: #FFFFFF;
+    text-align: center;
+    font-size: rem;
+    padding: 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+footer {
+    background-color: hsl(235, 45%, 20%);
+    color: #FFFFFF;
+    text-align: center;
+    padding: 1em;
+    margin-top: 20px;
 }
 
 header nav ul {
@@ -25,9 +53,22 @@ header nav ul li a {
     text-decoration: none;
 }
 
-main {
-    display: flex;
-    margin: 20px;
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.nav-row {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 1em;
+}
+
+.right-align {
+  justify-content: flex-end;
 }
 
 article {
@@ -39,32 +80,55 @@ aside {
     flex: 1;
 }
 
-footer {
-    background-color: #1A1736;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-}
-
 .intro-text {
   margin-bottom: 20px; /* Adjust the value as needed */
 }
 
+/* Buttons */
+
 .button-link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #E8F080;
-    color: #000000;
+    background-color: hsl(182, 88%, 90%);
+    color: hsl(225, 45%, 20%);
     text-decoration: none;
-    border-radius: 6px;
+    font-size: rem;
     font-weight: bold;
+    border-radius: 6px;
     transition: background-color 0.3s ease;
 }
-  
 .button-link:hover {
     background-color: #DA70D6;
 }
+
+.button-link-essential {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #E8F080;
+    color: hsl(235, 45%, 20%);
+    text-decoration: none;
+    font-size: rem;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+.button-link-essential:hover {
+    background-color: #DA70D6;
+}
+
+.button-link-nonfunctional {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #DA70D6;
+    color: hsl(225, 45%, 20%);
+    text-decoration: none;
+    font-size: rem;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+ 
+/* Advertisements */
 
 .ad-space {
     background-color: #f4f4f4;
@@ -76,9 +140,12 @@ footer {
 /*
 White: #FFFFFF
 Light Blue: #EBEAF6
+    #cff9fc
 Snot: #E8F080
 Orchid: #DA70D6
 Deep Blue: #1A1736
+    hsl(225, 45%, 20%)
+    hsl(235, 45%, 20%)
 Black: #000000
 
 Magenta?: #a330a3
