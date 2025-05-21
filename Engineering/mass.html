@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mass Unit Converter - Dachewda</title>
+  <link rel="stylesheet" href="../Formatting.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3557835901639959"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Mass Unit Converter</h1>
+      <nav>
+        <ul>
+          <li><a href="../index.html" class="button-link">Dachewda - Home Page</a></li>
+          <li><a href="../about.html" class="button-link-essential">About Us</a></li>
+          <li><a href="../contact.html" class="button-link-essential">Contact Us</a></li>
+          <li><a href="../privacy.html" class="button-link-essential">Privacy Policy</a></li>
+        </ul>
+      </nav> 
+  </header>
+
+  <div class="converter-grid">
+    <input type="number" id="inputValue" placeholder="Enter value" />
+    <select id="fromUnit">
+      <option value="oz">Ounces (oz)</option>
+      <option value="lb">Pounds (lb)</option>
+      <option value="ton">Tons (short)</option>
+      <option value="g">Grams (g)</option>
+      <option value="kg">Kilograms (kg)</option>
+      <option value="t">Metric Tons (t)</option>
+    </select>
+    <input type="text" id="outputValue" placeholder="Result" readonly />
+    <select id="toUnit">
+      <option value="g">Grams (g)</option>
+      <option value="kg">Kilograms (kg)</option>
+      <option value="t">Metric Tons (t)</option>
+      <option value="oz">Ounces (oz)</option>
+      <option value="lb">Pounds (lb)</option>
+      <option value="ton">Tons (short)</option>
+    </select>
+  </div>
+
+  <p class="result" id="result"></p>
+
+  <script>
+    const conversionRates = {
+      oz: 28.3495,      // grams
+      lb: 453.592,      // grams
+      ton: 907184.74,   // grams (short ton)
+      g: 1,
+      kg: 1000,
+      t: 1_000_000
+    };
+
+    function convertMass() {
+      const inputValue = parseFloat(document.getElementById('inputValue').value);
+      const fromUnit = document.getElementById('fromUnit').value;
+      const toUnit = document.getElementById('toUnit').value;
+      const outputField = document.getElementById('outputValue');
+
+      if (isNaN(inputValue)) {
+        outputField.value = '';
+        document.getElementById('result').textContent = '';
+        return;
+      }
+
+      const grams = inputValue * conversionRates[fromUnit];
+      const resultValue = grams / conversionRates[toUnit];
+
+      outputField.value = resultValue.toFixed(4);
+      document.getElementById('result').textContent =
+        `${inputValue} ${fromUnit} = ${resultValue.toFixed(4)} ${toUnit}`;
+    }
+
+    // Trigger conversion on any relevant input change
+    document.getElementById('inputValue').addEventListener('input', convertMass);
+    document.getElementById('fromUnit').addEventListener('change', convertMass);
+    document.getElementById('toUnit').addEventListener('change', convertMass);
+  </script>
+
+  <footer>
+    <p>&copy; 2025 Dachewda. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
