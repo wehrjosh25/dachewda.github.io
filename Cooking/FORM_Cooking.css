@@ -52,6 +52,7 @@ header nav ul li a:hover {
 
 /* Main content */
 main {
+  font-size: clamp(16px, 3vw, 24px);
   flex: 1;
   margin-top: 10px;
   margin-left: 20px;
@@ -62,7 +63,7 @@ main {
   font-weight: bold;
 }
 
-/* Three column layout */
+/* Column layouts */
 .three-column-layout {
   display: flex;
   justify-content: space-between;
@@ -72,16 +73,32 @@ main {
 
 }
 
-@media (max-width: 768px) {
-  .three-column-layout {
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 10px;
-  }
+.two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
 
-  .column {
-    width: 100%;
-  }
+.text-column, .image-column {
+  flex: 1 1 0;
+  min-width: 300px;
+}
+
+.text-column {
+  padding: 0 2vw; /* top/bottom 0, left/right 20px */
+}
+
+.image-column {
+  display: flex;             /* Make it a flex container */
+  justify-content: center;   /* Center horizontally */
+  align-items: center;       /* Center vertically */
+}
+
+.image-column img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;            /* This is optional here because flex centers the image */
 }
 
 .column {
@@ -90,6 +107,22 @@ main {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .three-column-layout {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+  }
+
+  .two-column {
+    flex-direction: column;
+  }
+
+  .column {
+    width: 100%;
+  }
 }
 
 /* Centering */
@@ -135,9 +168,9 @@ ol{
 
 .scaled-image-50 {
   display: block;
-  width: 50%;   /* scales to 50% of parent container */
-  height: auto; /* keep aspect ratio */
-  margin: 1em auto; 
+  max-height: 600px;
+  width: auto; /* keep aspect ratio */
+  margin: 0 auto; 
 }
 
 /* Footer */
