@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2D Force Vector Summation</title>
+  <meta name="description" content="Bite-sized Webpages.">
+  <link rel="stylesheet" href="../Formatting.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3557835901639959"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Force Vectors</h1>
+      <nav>
+        <ul>  
+          <li><a href="../about.html" class="button-link-essential">About Dachewda</a></li>
+          <li><a href="../contact.html" class="button-link-essential">Contact Us</a></li>
+          <li><a href="../privacy.html" class="button-link-essential">Privacy Policy</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <h2>2D Force Vector Summation</h2>
+
+  <label>Number of Vectors (1–9):</label>
+  <input type="number" id="vectorCount" min="1" max="9" value="2"><br><br>
+
+  <div id="vectorInputs"></div>
+
+  <h3>Results:</h3>
+  <p id="results"></p>
+
+  <canvas id="vectorCanvas" width="600" height="400"></canvas>
+
+  <script>
+    const vectorInputsDiv = document.getElementById("vectorInputs");
+
+    document.getElementById("vectorCount").addEventListener("input", () => {
+      createVectorInputs();
+      calculate(); // recalculate on vector count change
+    });
+
+    createVectorInputs(); // Initial setup
+    calculate(); // Initial calculation
+
+    function createVectorInputs() {
+      const count = parseInt(document.getElementById("vectorCount").value);
+      vectorInputsDiv.innerHTML = "";
+
+      for (let i = 0; i < count; i++) {
+        const magId = `mag${i}`;
+        const angId = `ang${i}`;
+
+        const vectorRow = document.createElement("div");
+        vectorRow.innerHTML = `
+          <label>Magnitude ${i + 1}:</label>
+          <input type="number" id="${magId}" value="0" step="any">
+          <label>Angle ${i + 1} (deg):</label>
+          <input type="number" id="${angId}" value="0" step="any"><br>
+        `;
+        vectorInputsDiv.appendChild(vectorRow);
+
+        // Add Listeners to New Inputs
+        setTimeout(() => {
+          document.getElementById(magId).addEventListener("input", calculate);
+          document.getElementById(angId).addEventListener("input", calculate);
+        }, 0);
+      }
+    }
+
+    function calculate() {
+      const count = parseInt(document.getElementById("vectorCount").value);
+      let xTotal = 0, yTotal = 0;
+      const vectors = [];
+
+      for (let i = 0; i < count; i++) {
+        const mag = parseFloat(document.getElementById(`mag${i}`).value) || 0;
+        const angDeg = parseFloat(document.getElementById(`ang${i}`).value) || 0;
+        const angRad = angDeg * Math.PI / 180;
+        const x = mag * Math.cos(angRad);
+        const y = mag * Math.sin(angRad);
+        vectors.push({ x, y, mag, angDeg });
+        xTotal += x;
+        yTotal += y;
+      }
+
+      const resultantMag = Math.sqrt(xTotal**2 + yTotal**2);
+      const resultantAngle = Math.atan2(yTotal, xTotal) * 180 / Math.PI;
+
+      document.getElementById("results").innerHTML = `
+        F<sub>x</sub>: ${xTotal.toFixed(2)}<br>
+        F<sub>y</sub>: ${yTotal.toFixed(2)}<br>
+        Resultant Magnitude: ${resultantMag.toFixed(2)}<br>
+        Resultant Angle: ${resultantAngle.toFixed(2)}&deg;
+      `;
+
+      drawVectors(vectors, xTotal, yTotal);
+    }
+
+    function drawVectors(vectors, xTotal, yTotal) {
+      const canvas = document.getElementById("vectorCanvas");
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      const centerX = canvas.width / 2;
+      const centerY = canvas.height / 2;
+      const scale = 10;
+
+      // Draw Axes
+      ctx.strokeStyle = "#999";
+      ctx.beginPath();
+      ctx.moveTo(centerX, 0);
+      ctx.lineTo(centerX, canvas.height);
+      ctx.moveTo(0, centerY);
+      ctx.lineTo(canvas.width, centerY);
+      ctx.stroke();
+
+      // Draw Vectors
+      let currentX = centerX;
+      let currentY = centerY;
+      ctx.strokeStyle = "blue";
+
+      vectors.forEach(v => {
+        const endX = currentX + v.x * scale;
+        const endY = currentY - v.y * scale;
+        ctx.beginPath();
+        ctx.moveTo(currentX, currentY);
+        ctx.lineTo(endX, endY);
+        ctx.stroke();
+        currentX = endX;
+        currentY = endY;
+      });
+
+      // Resultant Vector
+      ctx.strokeStyle = "red";
+      ctx.beginPath();
+      ctx.moveTo(centerX, centerY);
+      ctx.lineTo(centerX + xTotal * scale, centerY - yTotal * scale);
+      ctx.stroke();
+    }
+  </script>
+</body>
+</html>
