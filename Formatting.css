@@ -6,7 +6,7 @@
   --Block: hsl(52, 85%, 70%); 
   --Hover: hsl(330, 65%, 60%);
   --White: hsl(210, 5%, 95%);
-  --Grey: hsl(150, 40%, 85%);
+  --Grey: hsl(150, 40%, 90%);
 
   --BG-Heavy: hsl(0 0 80%);
   --BG: hsl(0 0 85%);
@@ -19,16 +19,24 @@
 
 @media (prefers-color-scheme: dark){
   :root{
-  --BG-Heavy: hsl(0 0 10%);
-  --BG: hsl(0 0 15%);
-  --BG-Light: hsl(0 0 20%);
+  --BG-Heavy: hsl(0 0 15%);
+  --BG: hsl(0 0 20%);
+  --BG-Light: hsl(0 0 25%);
   --Text: hsl(0 0 95%);
   --Text-Muted: hsl(0 0 70%);
+
+  /* Makes link text legible */
+  main a:not(.button-link):not(.button-home) {
+    color: var(--Secondary); 
+  }
+  main a:not(.button-link):not(.button-home):hover {
+    color: var(--Hover);
+  }
   }
 }
 
 
-/* Navigation & Buttons */
+/* Navigation, Buttons, & Links */
 
 header nav ul {
   list-style-type: none; /* No bullets */
@@ -54,26 +62,30 @@ header nav ul li a:hover {
   color: var(--Grey);
 }
 
-.button-link{ 
+.button-link,
+.button-home {
   display: inline-block;
   font-size: 1rem;
-
-  /* Copy of nav ul for now */
   text-decoration: none;
-  list-style-type: none; 
   font-weight: bold;
-  padding: 10px 14px; /* Padding around text: Block size */
+  padding: 10px 14px;
   border-radius: 6px;
-  background-color: var(--Block);
   color: var(--Main);
   transition: background-color 0.6s ease;
 }
-
-.button-link:hover {
+.button-link:hover,
+.button-home:hover {
   background-color: var(--Hover);
   color: var(--Grey);
 }
-
+.button-link {
+  background-color: var(--Block);
+  color: var(--Main);
+}
+.button-home {
+  background-color: var(--Secondary);
+  margin-top: 20px;
+}
 
 /* Headers & Footer */
 
@@ -83,6 +95,10 @@ header {
   text-align: center;
   font-size: 1.3rem;
   padding: 10px;
+}
+
+h2{
+  margin-top: 40px;
 }
 
 footer {
