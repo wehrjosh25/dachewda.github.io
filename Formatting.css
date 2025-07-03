@@ -1,265 +1,167 @@
-/* EDIT THIS FILE LATER */
+/* ----- Global Formatting ----- */
 
-.container {
-  text-align: center;
+:root {
+  --Main: hsl(232, 60%, 30%);
+  --Secondary: hsl(182, 85%, 85%);
+  --Block: hsl(52, 85%, 70%); 
+  --Hover: hsl(330, 65%, 60%);
+  --White: hsl(210, 5%, 95%);
+  --Grey: hsl(150, 40%, 85%);
+
+  --BG-Heavy: hsl(0 0 80%);
+  --BG: hsl(0 0 85%);
+  --BG-Light: hsl(0 0 90%);
+  --Text: hsl(0 0 5%);
+  --Text-Muted: hsl(0 0 30%);
 }
 
-.container input {
-  width: 100%;
-  max-width: 300px;
-  padding: 10px;
-  margin: 10px auto;
-  display: block;
-  font-size: 1rem;
-  text-align: center;
-}
+/* Dark Mode */
 
-/* Default: full width (mobile-first approach) */
-.responsive-canvas {
-  width: 100%;
-  height: auto;
-  border: 1px solid #ccc;
-  background-color: white;
-  display: block;
-  margin: 20px auto;
-}
-
-/* On larger screens, limit width to 50% */
-@media (min-width: 768px) {
-  .responsive-canvas {
-    width: 50%;
+@media (prefers-color-scheme: dark){
+  :root{
+  --BG-Heavy: hsl(0 0 10%);
+  --BG: hsl(0 0 15%);
+  --BG-Light: hsl(0 0 20%);
+  --Text: hsl(0 0 95%);
+  --Text-Muted: hsl(0 0 70%);
   }
 }
 
 
-/* Base Layout */
-html, body {
+/* Navigation & Buttons */
+
+header nav ul {
+  list-style-type: none; /* No bullets */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0; /* Removes bullet-point indents */
+  column-gap: 15px; /* Gap between nav elements */
+  row-gap: 30px; 
+}
+
+header nav ul li a {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 14px; /* Padding around text: Block size */
+  border-radius: 6px;
+  background-color: var(--Block);
+  color: var(--Main);
+  transition: background-color 0.6s ease;
+}
+header nav ul li a:hover {
+  background-color: var(--Hover);
+  color: var(--Grey);
+}
+
+.button-link{ 
+  display: inline-block;
+  font-size: 1rem;
+
+  /* Copy of nav ul for now */
+  text-decoration: none;
+  list-style-type: none; 
+  font-weight: bold;
+  padding: 10px 14px; /* Padding around text: Block size */
+  border-radius: 6px;
+  background-color: var(--Block);
+  color: var(--Main);
+  transition: background-color 0.6s ease;
+}
+
+.button-link:hover {
+  background-color: var(--Hover);
+  color: var(--Grey);
+}
+
+
+/* Headers & Footer */
+
+header {
+  background-color: var(--Main);
+  color: var(--White);
+  text-align: center;
+  font-size: 1.3rem;
+  padding: 10px;
+}
+
+footer {
+  background-color: var(--Main);
+  color: var(--White);
+  text-align: center;
+  padding: 1em; /* Relative to parent font size */
+}
+
+
+/* Body & Layout */
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body {
   height: 100%;
   margin: 0;
   display: flex;
   flex-direction: column;
-}
-
-body {
-  font-family: Arial, sans-serif;
+  justify-content: center;   /* Centers body content vertically */
   padding: 5px;
+  
+  font-family: Arial, sans-serif;
+  background-color: var(--BG);
 }
 
-/* Header */
-header {
-  background-color: hsl(235, 45%, 20%);
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 1.3rem;
-  padding: 10px;
-  margin-bottom: 20px;
-}
-
-h2 {
-  margin-top: 1.5em;
-}
-
-/* Navigation (horizontal layout) */
-header nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-}
-
-header nav ul li {
-  /* no extra styling needed with flex */
-}
-
-header nav ul li a {
-  color: #1A1736;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 6px;
-  background-color: #E8F080;
-  transition: background-color 0.3s ease;
-}
-
-header nav ul li a:hover {
-  background-color: #DA70D6;
-  color: white;
-}
-
-/* Main content */
 main {
-  flex: 1;
-  margin-top: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.bold-text {
-  font-weight: bold;
-}
-
-/* Column layouts */
-.three-column-layout {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin: 40px auto;
-  max-width: 1000px;
-
-}
-
-.two-column {
-  display: flex;
-  flex-wrap: wrap; /* allows stacking on small screens */
-  gap: 2em;
-  margin: 2em 0;
-}
-.text-column, .image-column {
-  flex: 1;
-  min-width: 300px;
-}
-.image-column img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.column {
-  flex: 1;
-  background-color: #f5f5f5;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-@media (max-width: 768px) {
-  .three-column-layout {
-    flex-direction: column;
-    gap: 10px;
-    padding: 0 10px;
-  }
-
-  .two-column {
-    flex-direction: column;
-  }
-
-  .column {
-    width: 100%;
-  }
-}
-
-/* Centering */
-.center-header {
-  text-align: center;
-  margin-top: 0;
-}
-
-.no-bullets {
-  list-style: none;
-  padding-left: 0;
-  margin-left: 0;
-}
-
-.full-page-centered {
-  width: fit-content;
-  margin: 0 auto; /* centers horizontally in the page */
-}
-
-.center-text {
-  text-align: center;
-}
-
-/* Lists */
-li {
-  line-height: 1.1;
-  margin-bottom: 0.8em;
-}
-
-ol{
-  margin-left: 1.6em;
-  list-style-position: inside;
-}
-
-/* Images */
-.centered-image {
-  display: block;         /* Makes the image a block-level element so margin auto works */
-  margin: 1em auto;       /* Centers the image horizontally and adds vertical margin */
-  max-width: 100%;        /* Prevents image from exceeding the width of its container */
-  height: auto;           /* Keeps the image aspect ratio intact */
-}
-
-/* Footer */
-footer {
-  background-color: hsl(235, 45%, 20%);
-  color: #FFFFFF;
-  text-align: center;
+  flex: 1; /* Takes up all remaining space */
   padding: 1em;
-  margin-top: 20px;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
+  color: var(--Text);
 }
-
-/* Buttons */
-.button-link,
-.button-link-essential,
-.button-link-nonfunctional {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
-}
-
-.button-link {
-  background-color: hsl(182, 88%, 90%);
-  color: hsl(225, 45%, 20%);
-}
-
-.button-link:hover {
-  background-color: #DA70D6;
-  color: white;
-}
-
-.button-link-essential {
-  background-color: #E8F080;
-  color: hsl(235, 45%, 20%);
-}
-
-.button-link-essential:hover {
-  background-color: #DA70D6;
-  color: white;
-}
-
-.button-link-nonfunctional {
-  background-color: #DA70D6;
-  color: hsl(225, 45%, 20%);
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-/* Tool Formatting */
-.converter-grid {
+main ul {
+  list-style-type: none; /* Remove bullets */
+  padding-left: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column; /* Stack vertically */
   align-items: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 20px auto;
-  max-width: 600px;
+  gap: 10px; /* Add spacing between buttons */
 }
 
-/* Advertisement Placeholder */
-.ad-space {
-  background-color: #f4f4f4;
-  padding: 10px;
+.center {
   text-align: center;
+}
+
+.section {
+  flex: 1;
+  padding: 0.5em;
+  border-radius: 8px;
+  background-color: var(--BG-Light);
+  color: var(--Text);
+}
+
+.three-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Center is wider */
+  gap: 1em;
+}
+@media (max-width: 768px) {
+  .three-section {
+    grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .three-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* Advertisements */
+
+.ad-space {
+  padding: 10px;
   border: 1px dashed #ccc;
 }
 
-/* Utility */
-.intro-text {
-  margin-bottom: 20px;
-}
+
