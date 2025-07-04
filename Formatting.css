@@ -100,6 +100,10 @@ header {
 h2{
   margin-top: 40px;
 }
+h3{
+  margin-top: 30px;
+  text-indent: 20px;
+}
 
 footer {
   background-color: var(--Main);
@@ -142,6 +146,9 @@ main ul {
   flex-direction: column; /* Stack vertically */
   align-items: center;
   gap: 10px; /* Add spacing between buttons */
+}
+li.indented {
+  margin-left: 3em;
 }
 
 .center {
