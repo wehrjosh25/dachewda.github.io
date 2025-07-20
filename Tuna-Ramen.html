@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuna Ramen</title>
+  <meta name="description" content="Tuna Ramen: a struggle meal for college students and campers.">
+  <link rel="stylesheet" href="../../Formatting.css" />
+  <link rel="stylesheet" href="../FORM_Cooking.css" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3557835901639959"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Tuna Ramen</h1>
+      <nav>
+        <ul>  
+          <li><a href="../../about.html" class="button-link-essential">About Dachewda</a></li>
+          <li><a href="../../contact.html" class="button-link-essential">Contact Us</a></li>
+          <li><a href="../../privacy.html" class="button-link-essential">Privacy Policy</a></li>
+        </ul>
+      </nav>
+  </header>
+
+    <div class="center" style="margin-top: 0.5em;">
+      <a href="../../index.html" class="button-home">Dachewda - Home Page</a>
+    </div>
+
+  <main>
+    <h2>Overview</h2>
+    <p class="center">Tuna Ramen is a quick and easy struggle meal for both college students and campers.</p>
+      <li class="indented">Total Cost: $2.70</li>
+      <li class="indented">Energy: 710 kcal</li>
+      <li class="indented">Protein: 30 g</li>
+
+    <h2>Ingredients</h2>
+      <div class="NF-table">
+        <div class="header">Nutrient</div>
+        <div class="header">Amount</div>
+        <div class="header">Daily Value</div>
+      </div>
+      <li class="indented">Canned Tuna: 5 oz, 90 kcal, ~$1.00</li>
+      <div class="NF-table" id="nutrition-tuna"></div>
+
+      <li class="indented">Ramen: 1 packet, 510 kcal, ~$1.25</li>
+      <div class="NF-table" id="nutrition-ramen"></div>
+
+      <li class="indented">Mayonnaise: 1 tbsp, 90 kcal, ~$0.10</li>
+      <div class="NF-table" id="nutrition-mayo"></div>      
+
+      <li class="indented">Green Onion: 1/2 onion, 20 kcal, ~$0.35</li>
+      <div class="NF-table" id="nutrition-greenonion"></div> 
+
+    <script>
+    const nutritionData = {
+        "nutrition-tuna": [
+        ["Protein", "20g", "37%"],
+        ["Total Fat", "0.5g", "1%"],
+        ["Carbohydrates", "0g", "0%"],
+        ["Cholesterol", "45mg", "15%"],
+        ["Sodium", "360mg", "16%"],
+        ],
+        "nutrition-ramen": [
+        ["Protein", "9g", "0%"],
+        ["Total Fat", "16g", "21%"],
+        ["Carbohydrates", "83g", "30%"],
+        ["Cholesterol", "0mg", "0%"],
+        ["Sodium", "1970mg", "86%"],
+        ],
+        "nutrition-mayo": [
+        ["Protein", "0g", "0%"],
+        ["Total Fat", "12g", "15%"],
+        ["Carbohydrates", "0g", "0%"],
+        ["Cholesterol", "5mg", "2%"],
+        ["Sodium", "100mg", "4%"],
+        ],
+        "nutrition-greenonion": [
+        ["Protein", "1g", "0%"],
+        ["Total Fat", "0g", "0%"],
+        ["Carbohydrates", "4g", "2%"],
+        ["Cholesterol", "0mg", "0%"],
+        ["Sodium", "10mg", "1%"],
+        ]
+    };
+
+    for (const [id, data] of Object.entries(nutritionData)) {
+        const table = document.getElementById(id);
+        data.forEach(row => {
+        row.forEach(cell => {
+            const div = document.createElement("div");
+            div.textContent = cell;
+            table.appendChild(div);
+        });
+        });
+    }
+    </script>
+
+    <div class="ad-space"></div>
+    
+    <h2>Preparation</h2>
+      <p>Empty the tuna can into a microwave safe bowl.</p>
+      <p>Place the ramen noodles on top of the tuna.</p>
+      <li class="indented">Optional: Add some of the seasoning packet.</li>
+      <li class="indented">Note: Reduce sodium content by using less/none of the seasoning packet.</li>
+      <p>Fill the bowl with water to cover about half of the noodles.</p>
+      <p>Microwave for 2-3 minutes.</p>
+      <p>Add mayonnaise and mix.</p>
+      <p>Top with green onion.</p>
+      <p>Wait for the tuna ramen to cool, then enjoy.</p>
+
+    <h2>Disclaimers</h2>
+    <div class="disclaimers">
+      <li>Nutrition facts are incomplete and may vary by brand and product preparation.</li>
+      <li>Costs are approximate and may change based on location, retailer, and availability.</li>
+      <li>This webpage is intended for general reference only and does not constitute medical or financial advice.</li>
+      <li>Consult a registered dietitian or healthcare provider prior to consumption.</li>
+    </div>
+    <div class="ad-space"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dachewda. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
