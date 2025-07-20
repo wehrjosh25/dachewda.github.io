@@ -5,6 +5,7 @@
   --Secondary: hsl(182, 85%, 85%);
   --Block: hsl(52, 85%, 70%); 
   --Hover: hsl(330, 65%, 60%);
+  --Error: hsl(0, 85%, 60%);
   --White: hsl(210, 5%, 95%);
   --Grey: hsl(150, 40%, 90%);
 
@@ -36,7 +37,7 @@
 }
 
 
-/* Navigation, Buttons, & Links */
+/* --- Navigation, Buttons, & Links --- */
 
 header nav ul {
   list-style-type: none; /* No bullets */
@@ -87,7 +88,7 @@ header nav ul li a:hover {
   margin-top: 20px;
 }
 
-/* Headers & Footer */
+/* --- Headers & Footer --- */
 
 header {
   background-color: var(--Main);
@@ -113,7 +114,7 @@ footer {
 }
 
 
-/* Body & Layout */
+/* --- Body & Layout --- */
 
 html {
   height: 100%;
@@ -125,12 +126,19 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;   /* Centers body content vertically */
   padding: 5px;
   
   font-family: Arial, sans-serif;
   background-color: var(--BG);
 }
+
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
 
 main {
   flex: 1; /* Takes up all remaining space */
@@ -163,6 +171,7 @@ li.indented {
   color: var(--Text);
 }
 
+/* 3-Section Layout */
 .three-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; /* Center is wider */
@@ -179,12 +188,51 @@ li.indented {
   }
 }
 
+/* 2-Column Layout */
+.two-column {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+.text-column, .image-column {
+  flex: 1 1 0;
+  min-width: 300px;
+}
+.text-column {
+  padding: 0 10vw; /* top/bottom 0, left/right 20px */
+}
+.image-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-column img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+@media (max-width: 768px) {
+  .three-column-layout {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 10px;
+  }
 
-/* Advertisements */
+  .two-column {
+    flex-direction: column;
+  }
+
+  .column {
+    width: 100%;
+  }
+}
+
+/* --- Advertisements --- */
 
 .ad-space {
   padding: 10px;
   border: 1px dashed #ccc;
+  margin-top: 10px;
 }
 
 
