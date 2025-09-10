@@ -1,0 +1,47 @@
+/* ----- Global Formatting ----- */
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0; 
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  padding: 0 3rem;
+}
+
+#map {
+  height: 60vh;
+}
+
+
+/* Dark Mode */
+
+@media (prefers-color-scheme: dark){
+  :root{
+  --BG-Heavy: hsl(0 0 15%);
+  --BG: hsl(0 0 20%);
+  --BG-Light: hsl(0 0 25%);
+  --Text: hsl(0 0 95%);
+  --Text-Muted: hsl(0 0 70%);
+
+  /* Makes link text legible */
+  main a:not(.button-link):not(.button-home) {
+    color: var(--Secondary); 
+  }
+  main a:not(.button-link):not(.button-home):hover {
+    color: var(--Hover);
+  }
+  }
+}
+
