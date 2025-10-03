@@ -87,6 +87,10 @@ header nav ul li a:hover {
   background-color: var(--Secondary);
   margin-top: 20px;
 }
+.button-bad {
+  background-color: var(--Error);
+  color: var(--Secondary);
+}
 
 /* --- Headers & Footer --- */
 
