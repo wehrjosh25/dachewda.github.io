@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SplitRent</title>
+  <meta name="description" content="SplitRent helps friends compromise on what matters most: Home. Find a central location and calculate a fair rent split with SplitRent.">
+  <link rel="stylesheet" href="/Formatting.css" />
+  <link rel="stylesheet" href="FORM_SR.css" />
+</head>
+
+<body>
+  <header>
+    <h1>SplitRent (Concept)</h1>
+      <nav>
+        <ul>  
+          <li><a href="../../about.html" class="button-link-essential">About Dachewda</a></li>
+          <li><a href="../../contact.html" class="button-link-essential">Contact Us</a></li>
+          <li><a href="../../privacy.html" class="button-link-essential">Privacy Policy</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <div class="center" style="margin-top: 0.5em;">
+    <a href="../../index.html" class="button-home">Dachewda - Home Page</a>
+  </div>
+  
+  <main>
+    <div class="center">
+      <h2>Overview</h2>
+      <p>Currently, I am living in a one-bedroom apartment close to my workplace.</p>
+      <p>Now that my friends are graduating and accepting job offers, we are looking to move in together.</p>
+      <p class="bold-color">QUESTION: How do we find a living space that is in a central location, and how should we split rent in a "fair" way?</p>
+      <p class="bold-color">ANSWER: SplitRent</p>
+      <p>The creator of this webpage is developing an algorithm that uses locations and preferences to identify and sort reasonable living spaces.</p>
+    </div>
+
+    <div class="center">
+      <h2>SplitRent "Fair" Principles</h2>
+      <p>The 50-50 split should only be implemented in "perfectly fair" conditions.</p>
+      <p>The person who lives closer to their specified location(s) should pay more; they spend less time on the road and less money on gas.</p>
+      <p>Rent should be cheaper per person when the total number of renters increases.</p>
+    </div>
+
+    <div class="center">
+      <h2>Rent Calculations</h2>
+      <h3 class="center">Example Scenario 1: Two Roommates</h3>
+      <p>Reagan and Bradford find a potential living space between their two workplaces.</p>
+      <p>This living space is 20 minutes from Reagan's workplace and 30 minutes from Bradford's workplace.</p>
+      <p class="bold-color">QUESTION: How should they reasonably split rent?</p>
+      <p class="bold-color">ANSWER: Let's derive SplitRent equations.</p>
+      <p>Round-trip, Reagan drives 40 minutes a day, and Bradford drives 60 minutes a day.</p>
+      <p>Between the two of them, they spend 100 minutes on the road.</p>
+      <P>Reagan accounts for 40% of the drive time whereas Bradford accounts for 60%.</P>
+      <p>To make things more "fair", their portions of the rent should be inversely related to their drive times.</p>
+      <p class="bold-grey">--- Reagan should pay 60%, and Bradford should pay 40% of the rent. ---</p>
+      <h3 class="center">Example Scenario 2: Three Roommates</h3>
+      <p>Lyn also wants to move in with Reagan and Bradford.</p>
+      <p>The same living space is 50 minutes away from Lyn's workplace, so Lyn would drive 100 minutes a day.</p>
+      <p>Between the three of them, they spend 200 minutes on the road.</p>
+      <ul class="bullet">Reagan: 40 minutes || 20% of total drive time.</ul>
+      <ul>Bradford: 60 minutes || 30% of total drive time.</ul>
+      <ul>Lyn: 100 minutes || 50% of total drive time.</ul>
+      <p>Now that there's three people, splitting rent isn't as easy as swapping drive time percentages.</p>
+      <p>Here's a new idea:</p>
+      <ol class="center">
+        <li>Subtract each persons drive time percentage from 100%.</li>
+        <li>Add these new "inverse percentages" together to determine a "dividing factor."</li>
+        <li>Divide everyone's "inverse percentages" by the "dividing factor."</li>
+      </ol>
+      <p class="bold-text">Inverse Percentages</p>
+      <p>Reagan: 100% - 20% = 80%</p>
+      <p>Bradford: 100% - 30% = 70%</p>
+      <p>Lyn: 100% - 50% = 50%</p>
+      <p class="bold-text">Dividing Factor: 80% + 70% + 50% = 200% = 2</p>
+      <p class="bold-color">SplitRent Percentages</p>
+      <p>Reagan: 80% / 2 = 40%</p>
+      <p>Bradford: 70% / 2 = 35%</p>
+      <p>Lyn: 50% / 2 = 25%</p>
+      <p class="bold-grey">--- Reagan should pay 40%, Bradford should pay 35%, and Lyn should pay 25% of the rent. ---</p>
+    </div>
+
+    <div class="center">
+      <h2>Future Improvements</h2>
+      <ol class="center">
+        <li>Derive equations for drive frequency adjustments.</li>
+        <li>Derive equations for hourly wage adjustments.</li>
+        <li>Derive equations for square-footage adjustments.</li>
+        <li>Add an interactive map.</li>
+        <li>Connect to a housing database.</li>
+        <li>Develop backend operations for user interactivity.</li>
+      </ol>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Dachewda. All rights reserved.</p>
+  </footer>
+
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&loading=async&libraries=maps&v=beta" 
+    defer>
+  </script>
+
+  <script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+      key: "YOUR_API_KEY",
+      v: "weekly",
+      // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+      // Add other bootstrap parameters as needed, using camel case.
+    });
+  </script>
+  
+</body>
+</html>
