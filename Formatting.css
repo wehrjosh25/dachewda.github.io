@@ -104,10 +104,12 @@ header {
 
 h2{
   margin-top: 40px;
+  font-size: 1.6rem;
 }
 h3{
   margin-top: 30px;
   text-indent: 20px;
+  color: var(--Block)
 }
 
 footer {
@@ -159,12 +161,26 @@ main ul {
   align-items: center;
   gap: 10px; /* Add spacing between buttons */
 }
+
 li.indented {
   margin-left: 3em;
 }
 
+ol {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+ol.center {
+  display: inline-block;
+  text-align: left
+}
+
 .center {
   text-align: center;
+  text-indent: 0px;
+}
+.top {
+  margin-top: 1em;
 }
 
 .section {
@@ -173,6 +189,18 @@ li.indented {
   border-radius: 8px;
   background-color: var(--BG-Light);
   color: var(--Text);
+}
+
+.bold-text {
+  font-weight: bold;
+}
+.bold-color {
+  font-weight: bold;
+  color: var(--Secondary);
+}
+.bold-grey {
+  font-weight: bold;
+  color: var(--Grey);
 }
 
 /* 3-Section Layout */
