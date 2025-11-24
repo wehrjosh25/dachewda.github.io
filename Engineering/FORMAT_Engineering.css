@@ -1,0 +1,62 @@
+/* ----- Cooking Formatting ----- */
+
+:root {
+  --Main: hsl(122, 60%, 30%);
+  --Secondary: hsl(72, 85%, 85%);
+  --Hover: hsl(220, 65%, 60%);
+
+  --BG-Heavy: hsl(0 0 80%);
+  --BG: hsl(0 0 85%);
+  --BG-Light: hsl(0 0 90%);
+  --Text: hsl(0 0 5%);
+  --Text-Muted: hsl(0 0 30%);
+}
+
+/* Dark Mode */
+
+@media (prefers-color-scheme: dark){
+  :root{
+  --BG-Heavy: hsl(0 0 15%);
+  --BG: hsl(0 0 20%);
+  --BG-Light: hsl(0 0 25%);
+  --Text: hsl(0 0 95%);
+  --Text-Muted: hsl(0 0 70%);
+
+  /* Makes link text legible */
+  main a:not(.button-link):not(.button-home) {
+    color: var(--Secondary); 
+  }
+  main a:not(.button-link):not(.button-home):hover {
+    color: var(--Hover);
+  }
+  }
+}
+
+/* --- Body & Layout --- */
+
+/* Nutrition Facts */
+.NF-table {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: clamp(60px, 20%, 120px) clamp(80px, 20%, 100px) clamp(60px, 20%, 100px);
+  column-gap: 16px;
+  row-gap: 4px;
+}
+.grid-table > div {
+  padding: 8px;
+  border: 1px solid var(--Main);
+}
+.header {
+  font-weight: bold;
+  background-color: var(--BG);
+}
+
+/* Disclaimers */
+.disclaimers{
+  padding-left: 3em;
+}
+.disclaimers li, ul{
+  margin-bottom: 16px;
+  font-weight: bold;
+}

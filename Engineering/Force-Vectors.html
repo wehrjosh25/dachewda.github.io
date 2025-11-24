@@ -6,6 +6,7 @@
   <title>2D Force Vector Summation</title>
   <meta name="description" content="Bite-sized Webpages.">
   <link rel="stylesheet" href="../Formatting.css" />
+  <link rel="stylesheet" href="FORMAT_Engineering.css" />
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3557835901639959"
      crossorigin="anonymous"></script>
 </head>
@@ -22,18 +23,23 @@
       </nav>
   </header>
 
-  <h2>2D Force Vector Summation</h2>
+    <div class="center" style="margin-top: 0.5em;">
+      <a href="../../index.html" class="button-home">Dachewda - Home Page</a>
+    </div>
 
-  <label>Number of Vectors (1–9):</label>
-  <input type="number" id="vectorCount" min="1" max="9" value="2"><br><br>
+  <main>
+    <h2>2D Force Vector Summation</h2>
 
-  <div id="vectorInputs"></div>
+    <label>Number of Vectors (1–9):</label>
+    <input type="number" id="vectorCount" min="1" max="9" value="2"><br><br>
 
-  <h3>Results:</h3>
-  <p id="results"></p>
+    <div id="vectorInputs"></div>
 
-  <canvas id="vectorCanvas" width="600" height="400"></canvas>
+    <h3>Results:</h3>
+    <p id="results"></p>
 
+    <canvas id="vectorCanvas" width="600" height="400"></canvas>
+  </main>
   <script>
     const vectorInputsDiv = document.getElementById("vectorInputs");
 
