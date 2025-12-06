@@ -1,0 +1,40 @@
+body {
+    font-family: sans-serif;
+    background: #111827;
+    color: #f1f5f9;
+    padding: 40px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#board {
+    width: 480px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+#controls {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #1e293b;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.15s ease-in-out;
+}
+
+button:hover {
+    background: #334155;
+}
+
+button:active {
+    transform: translateY(1px);
+}
