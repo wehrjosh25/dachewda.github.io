@@ -1,9 +1,9 @@
 /* ----- Chess Formatting ----- */
 
 :root {
-  --Main: hsl(2, 60%, 30%);
-  --Secondary: hsl(312, 85%, 85%);
-  --Hover: hsl(100, 65%, 60%);
+  --Main: hsl(352, 60%, 30%);
+  --Secondary: hsl(302, 85%, 85%);
+  --Hover: hsl(90, 65%, 60%);
 
   --BG-Heavy: hsl(0 0 80%);
   --BG: hsl(0 0 85%);
@@ -32,25 +32,12 @@
   }
 }
 
-/* --- Body & Layout --- */
-
-body {
-    font-family: sans-serif;
-    background: #111827;
-    color: #f1f5f9;
-    padding: 40px;
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-
 /* --- Chess Board & Animation Controls --- */
 
 #board {
     width: 480px;
     margin-bottom: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
 }
 
 #controls {
@@ -62,15 +49,13 @@ button {
     padding: 10px 16px;
     border: none;
     border-radius: 6px;
-    background: #1e293b;
-    color: white;
+    background: var(--Main);
+    color: var(--Text);
     cursor: pointer;
-    font-size: 15px;
-    transition: 0.15s ease-in-out;
 }
 
 button:hover {
-    background: #334155;
+    background: var(--Hover);
 }
 
 button:active {
