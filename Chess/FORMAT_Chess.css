@@ -34,15 +34,39 @@
 
 /* --- Chess Board & Animation Controls --- */
 
-#board {
-    width: 480px;
-    margin-bottom: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+#boards-container-HOR {
+    display: flex;             /* Horizontal layout */
+    flex-wrap: wrap;           /* Boards wrap to next line if needed */
+    gap: 0.5em;                /* Space between boards */
+    width: 100%;               /* Fill parent container */
+    justify-content: center;   /* Center boards horizontally */
+    box-sizing: border-box;    /* Include padding/gap in width calculations */
 }
+
+.chessboard {
+    flex: 1 1 200px;           /* Grow/shrink, start at 200px width */
+    max-width: 25%;            /* Maximum 4 boards in a row */
+}
+
+        @media (max-width: 800px) {
+            .chessboard {
+                flex: 1 1 50%;         /* Two boards per row */
+                max-width: 40%;        /* Remove previous max-width */
+            }
+        }
+
+        @media (max-width: 400px) {
+            .chessboard {
+                flex: 1 1 80%;
+                max-width: 40%;        /* Remove previous max-width */ 
+            }
+        }
 
 #controls {
     display: flex;
+    justify-content: center;
     gap: 10px;
+    margin-top: 10px;
 }
 
 button {

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hungarian Opening</title>
+  <meta name="description" content="Overview of the Hungarian Opening. Introduction to my repertoire and explanation for opening choices.">
+
+  <link rel="stylesheet" href="../Formatting.css" />
+  <link rel="stylesheet" href="FORMAT_Chess.css">
+
+  <!-- Chess board style. -->
+  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+
+  <!-- I don't know what this does, but I need it to load the board. -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+    crossorigin="anonymous"></script>
+
+  <!-- Loads the move script as an ES Module. -->
+  <script type="module" src="Hungarian_Opening.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>The Hungarian Opening</h1>
+    <nav>
+      <ul>  
+        <li><a href="about.html" class="button-link-essential">About Dachewda</a></li>
+        <li><a href="contact.html" class="button-link-essential">Contact Us</a></li>
+        <li><a href="privacy.html" class="button-link-essential">Privacy Policy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="center">
+      <a href="../../index.html" class="button-home">Dachewda - Home Page</a>
+    </div>
+
+  <h2 class="center">Introduction</h2>
+    <p class="center">The Hungarian Opening starts with the opening move, 1. g3.</p>
+    <p class="center">In the Masters database, it is the most common opening move for White that does not control a central square.</p>
+    <p class="center">Unlike the moves e4, d4, c4, and Nf3, the move g3 controls neither d5 nor e5 - see examples below.</p>
+
+    <div id="boards-container-HOR">
+      <div id="e4-d5_000" class="chessboard"></div>
+      <div id="d4-e5_000" class="chessboard"></div>
+      <div id="c4-d5_000" class="chessboard"></div>
+      <div id="Nf3-e5_000" class="chessboard"></div>
+    </div>
+
+    <div id="controls">
+      <button id="play_1">Play ▶</button>
+      <button id="reset_1">Reset ⎌</button>
+      <!-- Add forward and back buttons in TEST_002. -->
+    </div>
+
+  <h2 class="center">Black's Responses</h2>
+    <p class="center">Since the Hungarian Opening does not control a central square, Black is allowed to make any move.</p>
+    <p class="center">The following boards demonstrate some common opening lines:</p>
+
+    <div id="boards-container-HOR">
+      <div id="c5_000" class="chessboard"></div>
+      <div id="d5_000" class="chessboard"></div>
+      <div id="e5_000" class="chessboard"></div>
+      <div id="f5_000" class="chessboard"></div>
+    </div>
+
+    <div id="controls">
+      <button id="play_2">Play ▶</button>
+      <button id="reset_2">Reset ⎌</button>
+      <!-- Add forward and back buttons in TEST_002. -->
+    </div>
+
+    <p class="center">These common opening lines resemble positions that can be achieved from the English Opening, a Queen's Pawn Opening, or a Reti Opening.</p>
+
+  <h2 class="center">Opening Justification</h2>
+    <p class="center">The Hungarian Opening prevents undesirable pawn interactions, avoids sidelines and gambits, and plays in a flexible manner.</p>
+    <p class="center">Depending on Black's response, the Hungarian Opening tranposes into an English Opening, a Queen's Pawn Opening, or a Reti Opening.</p>
+    <p class="center">Unlike the Reti Opening, the Hungarian Opening allows White to place the king's knight on another square.</p>
+    <p class="center">Additionally, it allows White to transpose into a Bird Opening against lazy defenders.</p>
+    <p class="center">While the Hungarian Opening allows Black to choose any opening move, it more importantly prevents Black from hijacking the game.</p>
+
+    <!-- Chessboard.js must load before TEST_001.js -->
+    <script src="js/chessboard-1.0.0.min.js"></script>
+  </main>
+</body>
+</html>
