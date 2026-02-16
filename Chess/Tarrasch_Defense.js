@@ -146,19 +146,19 @@ document.addEventListener("DOMContentLoaded", () => {
         game3.reset(); 
         game4.reset(); 
     
-        // ---- PRELOAD FIRST 4 MOVES ----
-        for (let i = 0; i < 4; i++) {
+        // ---- PRELOAD FIRST 6 MOVES ----
+        for (let i = 0; i < 6; i++) {
             game3.move(moves3[i]);
             game4.move(moves4[i]);
         }
 
-        // Update boards instantly to move 4 position
+        // Update boards instantly to move 6 position
         board3.position(game3.fen());
         board4.position(game4.fen());
 
-        // Start animation from move 4
-        index3 = 4;
-        index4 = 4;
+        // Start animation from move 6
+        index3 = 6;
+        index4 = 6;
 
         playBoards_2();
     });
@@ -203,8 +203,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Reset button
     document.getElementById("reset_3").addEventListener("click", () => {
-        game5.reset(); index5 = 0; board5.start();
-        game6.reset(); index6 = 0; board6.start();
+        preloadToMove(game5, board5, moves5, 6);
+        preloadToMove(game6, board6, moves6, 6);
+        index5 = 6;
+        index6 = 6;
     });
-
 });
