@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarrasch Defense</title>
+  <meta name="description" content="Overview of the Tarrasch Defense. Explanation of when how to enter the Tarrasch Defense. Tutorial of how to play the Tarrasch Defense. Showcase of some notable lines unique to the Tarrasch Defense.">
+
+  <link rel="stylesheet" href="../Formatting.css" />
+  <link rel="stylesheet" href="FORMAT_Chess.css">
+
+  <!-- Chess board style. -->
+  <link rel="stylesheet" href="css/chessboard-1.0.0.min.css">
+
+  <!-- I don't know what this does, but I need it to load the board. -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+    crossorigin="anonymous"></script>
+
+  <!-- Loads the move script as an ES Module. -->
+  <script type="module" src="Tarrasch_Defense.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>Tarrasch Defense</h1>
+    <nav>
+      <ul>  
+        <li><a href="about.html" class="button-link-essential">About Dachewda</a></li>
+        <li><a href="contact.html" class="button-link-essential">Contact Us</a></li>
+        <li><a href="privacy.html" class="button-link-essential">Privacy Policy</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="center">
+      <a href="../../index.html" class="button-home">Dachewda - Home Page</a>
+    </div>
+
+  <h2 class="center">Introduction</h2>
+    <p class="center">The <b>Tarrasch Defense</b> is a sideline defense, most commonly played against the Queen's Gambit.</p>
+    <p class="center">This defense is typically played from the Queen's Gambit Declined (QGD), but it can be achieved from other non-e4 openings.</p>
+    <p class="center">Chess engines evaluate the <b>Tarrasch Defense</b> to be a valid opening option.</p>
+    <p class="center">The only 'drawback' of this sideline is the possibility of an isolated queen's pawn (IQP) for Black.</p>
+
+    <div id="boards-container-HOR">
+      <div id="TD_000" class="chessboard"></div>
+      <div id="TD_Agincourt" class="chessboard"></div>
+    </div>
+
+    <div id="controls">
+      <button id="play_1">Play ▶</button>
+      <button id="reset_1">Reset ⎌</button>
+      <!-- Add forward and back buttons in TEST_002. -->
+    </div>
+
+    <p class="center">Unlike the main line of the QGD - where Black has a knight on f6 - the <b>Tarrasch Defense</b> quickly challenges White's pawns with the pawn on c5.</p>
+
+  <h2 class="center">Pawn Exchanges</h2>
+    <div id="boards-container-HOR">
+      <div id="TD_ML" class="chessboard"></div>
+      <div id="TD_4dxc5" class="chessboard"></div>
+    </div>
+
+    <div id="controls">
+      <button id="play_2">Play ▶</button>
+      <button id="reset_2">Reset ⎌</button>
+      <!-- Add forward and back buttons in TEST_002. -->
+    </div>
+
+    <p class="center">Against the <b>Tarrasch Defense</b>, it is in White's best interest to capture Black's d-pawn right away, 4. cxd5. After Black recaptures with 4... exd5, White can develop naturally. [Left Board]</p>
+    <p class="center">If White takes the c-pawn first, 4. dxc5, Black has the option to push their d-pawn, 4... d4, and threaten the knight on c3. This pawn capture can lead to tricky lines which engines evaluate to be equal. [Right Board]</p>
+
+  <h2 class="center">D-Pawn Reinforcement</h2>
+    <div id="boards-container-HOR">
+      <div id="TD_4e3" class="chessboard"></div>
+      <div id="TD_4Nf3" class="chessboard"></div>
+    </div>
+
+    <div id="controls">
+      <button id="play_3">Play ▶</button>
+      <button id="reset_3">Reset ⎌</button>
+      <!-- Add forward and back buttons in TEST_002. -->
+    </div>
+
+    <p class="center">At the club level, White will sometimes reinforce their d-pawn because they are unfamiliar with the <b>Tarrasch Defense</b>.  </p>
+    <p class="center">If White plays 4. e3, Black can develop their knight, 4... Nf6, and continue to develop naturally. [Left Board]</p>
+    <p class="center">If White plays 4. Nf3, Black has the option to take White's d-pawn, 4... cxd4.</p>
+    <p class="center">If White recaptures with the queen, 5. Qxd4, Black can develop their knight to c6, 5... Nc6, and force the queen to move.</ul>
+    <p class="center">If White recaptures with the knight, 5. Nxd4, Black can push their e-pawn, 5... e5, and force the knight to move. [Right Board]</ul>
+
+    <div id="boards-container-HOR">
+      <div id="TD_000" class="chessboard"></div>
+      <div id="TD_Agincourt" class="chessboard"></div>
+      <div id="TD_ML" class="chessboard"></div>
+      <div id="TD_4dxc5" class="chessboard"></div>
+      <div id="TD_4e3" class="chessboard"></div>
+      <div id="TD_4Nf3" class="chessboard"></div>
+    </div>
+
+  <h2 class="center">Opening Justification</h2>
+    <p class="center">The <b>Tarrasch Defense</b> leads to active games in which Black can fight for early center control and piece activity.</p>
+    <p class="center">This defense's setup can be played against any non-e4 opening (with the correct move order).</p>
+    <p class="center">The <b>Tarrasch Defense</b> is relatively uncommon, so White is less likely to be prepared for it.</p>
+    <p class="center">If White plays inaccurately, Black can quickly equalize the position and can actively play with decent control of the board.</p>
+    <p class="center">The main downsides of this defense are (1) reduced flexibility from pushing the c-pawn early and (2) increased odds of an IQP.</p>
+    <p class="center">If Black is willing to accept these downsides, Black should play the <b>Tarrasch Defense</b> to enter less-known theoretical lines.</p>
+
+
+  <h2 class="center">Gameplay & Analysis</h2>
+    <p class="center">For videos covering <b>Tarrasch Defense</b> gameplay and analysis, refer to the <a class="button-YT" href="https://www.youtube.com/playlist?list=PLYoDHoECnDXB6orgz8B3ROs9Oa8TntGLg" target="_blank">Dachewda</a> YouTube channel.</p>  
+
+    <!-- Chessboard.js must load before TEST_001.js -->
+    <script src="js/chessboard-1.0.0.min.js"></script>
+  </main>
+</body>
+</html>
