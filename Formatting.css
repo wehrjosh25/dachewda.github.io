@@ -1,13 +1,19 @@
 /* ----- Global Formatting ----- */
 
 :root {
-  --Main: hsl(232, 60%, 30%);
+  --Dachewda: hsl(232, 60%, 30%); /* #1f2b7a */
+  --Dachewda-S: hsl(182, 85%, 85%); /* #1f2b7a */
+  --Main: hsl(232, 60%, 30%); /* #1f2b7a */
+  --Main-C: hsl(232, 60%, 60%);
+  --Main-D: hsl(232, 60%, 75%);
   --Secondary: hsl(182, 85%, 85%);
-  --Block: hsl(52, 85%, 70%); 
+  --Block: hsl(52, 85%, 70%); /* #f4e271 */
   --Hover: hsl(330, 65%, 60%);
   --Error: hsl(0, 85%, 60%);
+  --YT: hsl(0, 100%, 50%);
   --White: hsl(210, 5%, 95%);
   --Grey: hsl(150, 40%, 90%);
+  --Soft: hsl(232, 60%, 90%);
 
   --BG-Heavy: hsl(0 0 80%);
   --BG: hsl(0 0 85%);
@@ -20,21 +26,23 @@
 
 @media (prefers-color-scheme: dark){
   :root{
-  --BG-Heavy: hsl(0 0 15%);
-  --BG: hsl(0 0 20%);
-  --BG-Light: hsl(0 0 25%);
-  --Text: hsl(0 0 95%);
-  --Text-Muted: hsl(0 0 70%);
+    --BG-Heavy: hsl(0 0 15%);
+    --BG: hsl(0 0 20%);
+    --BG-Light: hsl(0 0 25%);
+    --Text: hsl(0 0 95%);
+    --Text-Muted: hsl(0 0 70%);
+  }
 
   /* Makes link text legible */
-  main a:not(.button-link):not(.button-home) {
+  main a:not(.button-link):not(.button-home):not(.button-YT) {
     color: var(--Secondary); 
   }
-  main a:not(.button-link):not(.button-home):hover {
+
+  main a:not(.button-link):not(.button-home):not(.button-YT):hover {
     color: var(--Hover);
   }
-  }
 }
+
 
 
 /* --- Navigation, Buttons, & Links --- */
@@ -87,6 +95,30 @@ header nav ul li a:hover {
   background-color: var(--Secondary);
   margin-top: 20px;
 }
+
+main a:not([class]) {
+  color: var(--Secondary);
+}
+a.button-YT {
+  display: inline-block;
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: background-color 0.6s ease;
+}
+a.button-YT:link,
+a.button-YT:visited {
+  color: var(--White);
+  background-color: var(--YT);
+}
+a.button-YT:hover,
+a.button-YT:active {
+  color: var(--Dachewda-S);
+  background-color: var(--Dachewda);
+}
+
 .button-bad {
   background-color: var(--Error);
   color: var(--Secondary);
