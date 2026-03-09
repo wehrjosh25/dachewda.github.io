@@ -1,5 +1,3 @@
-/* ----- Global Formatting ----- */
-
 html {
   box-sizing: border-box;
   font-size: 100%;
@@ -14,16 +12,9 @@ body {
   padding: 0; 
 }
 
-h1 {
-  text-align: center;
-  font-size: 2rem;
-  padding: 0 3rem;
-}
-
 #map {
-  height: 60vh;
+  height: 100%;
 }
-
 
 /* Dark Mode */
 
