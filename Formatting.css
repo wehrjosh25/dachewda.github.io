@@ -2,9 +2,9 @@
 
 :root {
   --Dachewda: hsl(232, 60%, 30%); /* #1f2b7a */
-  --Dachewda-S: hsl(182, 85%, 85%); /* #1f2b7a */
+  --Dachewda-S: hsl(182, 84%, 85%); /* #b8f7f9 */
   --Main: hsl(232, 60%, 30%); /* #1f2b7a */
-  --Main-C: hsl(232, 60%, 60%);
+  --Main-C: hsl(232, 60%, 60%); /* #5c6cd6 */
   --Main-D: hsl(232, 60%, 75%);
   --Secondary: hsl(182, 85%, 85%);
   --Block: hsl(52, 85%, 70%); /* #f4e271 */
@@ -44,8 +44,15 @@
 }
 
 
-
 /* --- Navigation, Buttons, & Links --- */
+
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 140px;
+  height: auto;
+}
 
 header nav ul {
   list-style-type: none; /* No bullets */
