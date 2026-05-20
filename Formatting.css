@@ -129,6 +129,7 @@ a.button-YT:active {
 .button-bad {
   background-color: var(--Error);
   color: var(--Secondary);
+  text-decoration: line-through;
 }
 
 /* --- Headers & Footer --- */
