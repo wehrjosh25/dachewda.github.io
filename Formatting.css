@@ -1,17 +1,15 @@
-/* ----- Global Formatting ----- */
+/* ----- Global Formatting ----- 25May2026 */
 
 :root {
-  --Dachewda: hsl(232, 60%, 30%); /* #1f2b7a */
-  --Dachewda-S: hsl(182, 84%, 85%); /* #b8f7f9 */
-  --Main: hsl(232, 60%, 30%); /* #1f2b7a */
-  --Main-C: hsl(232, 60%, 60%); /* #5c6cd6 */
-  --Main-D: hsl(232, 60%, 75%);
+  --Dachewda: hsl(232, 68%, 32%);
+  --Dachewda-S: hsl(182, 85%, 85%);
+  --Main: hsl(232, 68%, 32%); 
   --Secondary: hsl(182, 85%, 85%);
-  --Block: hsl(52, 85%, 70%); /* #f4e271 */
+  --Block: hsl(52, 85%, 70%);
   --Hover: hsl(330, 65%, 60%);
   --Error: hsl(0, 85%, 60%);
   --YT: hsl(0, 100%, 50%);
-  --White: hsl(210, 5%, 95%);
+  --White: hsl(180, 80%, 96%);
   --Grey: hsl(150, 40%, 90%);
   --Soft: hsl(232, 60%, 90%);
 
@@ -43,31 +41,55 @@
   }
 }
 
+/* --- Header --- 25May2026 */
 
-/* --- Navigation, Buttons, & Links --- */
-
-.logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 140px;
-  height: auto;
+.site-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+  padding: 20px;
 }
 
+.logo {
+  height: 120px;
+  width: auto;
+  display: block;
+}
+
+.header-content {
+  text-align: center;
+}
+
+.site-header::after {
+  content: "";
+  width: 120px;
+}
+
+/* Title */
+.site-header h1 {
+  margin: 0 0 15px 0;
+  text-align: center;
+}
+
+/* Navigation */
 header nav ul {
-  list-style-type: none; /* No bullets */
+  list-style-type: none;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-left: 0; /* Removes bullet-point indents */
-  column-gap: 15px; /* Gap between nav elements */
-  row-gap: 30px; 
+
+  padding-left: 0;
+  margin: 0;
+
+  column-gap: 15px;
+  row-gap: 15px;
 }
 
 header nav ul li a {
   text-decoration: none;
   font-weight: bold;
-  padding: 10px 14px; /* Padding around text: Block size */
+  padding: 10px 14px;
   border-radius: 6px;
   background-color: var(--Block);
   color: var(--Main);
@@ -78,8 +100,29 @@ header nav ul li a:hover {
   color: var(--Grey);
 }
 
+/* - Mobile Layout - */
+@media (max-width: 700px) {
+  .site-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+    row-gap: 15px;
+  }
+
+  .site-header::after {
+    display: none;
+  }
+
+  .logo {
+    width: 100px;
+    margin: 0 auto;
+  }
+}
+
+/* --- Navigation, Buttons, & Links --- */
+
 .button-link,
-.button-home {
+.button-home,
+.button-bad {
   display: inline-block;
   font-size: 1rem;
   text-decoration: none;
@@ -89,6 +132,7 @@ header nav ul li a:hover {
   color: var(--Main);
   transition: background-color 0.6s ease;
 }
+
 .button-link:hover,
 .button-home:hover {
   background-color: var(--Hover);
@@ -129,7 +173,8 @@ a.button-YT:active {
 .button-bad {
   background-color: var(--Error);
   color: var(--Secondary);
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
+  transition: none;
 }
 
 /* --- Headers & Footer --- */
@@ -241,6 +286,16 @@ ol.center {
 .bold-grey {
   font-weight: bold;
   color: var(--Grey);
+}
+
+/* Images */
+
+.scaled-image-90 {
+  display: block;
+  width: 90%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 /* 3-Section Layout */
