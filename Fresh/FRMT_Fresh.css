@@ -1,0 +1,100 @@
+/* ----- Fresh Formatting ----- */
+
+:root {
+  --Main: hsl(187, 68%, 32%);;
+  --Secondary: hsl(277, 85%, 85%);
+  --Hover: hsl(97, 60%, 60%);
+}
+
+/* Dark Mode */
+
+@media (prefers-color-scheme: dark){
+  :root{
+  --BG-Heavy: hsl(0 0 15%);
+  --BG: hsl(0 0 20%);
+  --BG-Light: hsl(0 0 25%);
+  --Text: hsl(0 0 95%);
+  --Text-Muted: hsl(0 0 70%);
+
+  /* Makes link text legible */
+  main a:not(.button-link):not(.button-home) {
+    color: var(--Secondary); 
+  }
+  main a:not(.button-link):not(.button-home):hover {
+    color: var(--Hover);
+  }
+  }
+}
+
+/* --- Body & Layout --- */
+
+/* Nutrition Facts */
+.NF-table {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: clamp(60px, 20%, 120px) clamp(80px, 20%, 100px) clamp(60px, 20%, 100px);
+  column-gap: 16px;
+  row-gap: 4px;
+}
+.grid-table > div {
+  padding: 8px;
+  border: 1px solid var(--Main);
+}
+.header {
+  font-weight: bold;
+  background-color: var(--BG);
+}
+
+/* Disclaimers */
+.disclaimers{
+  padding-left: 3em;
+}
+.disclaimers li, ul{
+  margin-bottom: 16px;
+  font-weight: bold;
+}
+
+/* Color Display */
+
+.palette {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.color-column {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+  height: 200px;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.2rem;
+
+  border: 2px solid white;
+  border-radius: 16px;
+}
+.color-column p {
+  margin: 0.25rem 0;
+}
+
+/* Color Palette */
+
+.G1 {  background-color: hsl(142, 68%, 32%); }
+.G2 {  background-color: hsl(172, 68%, 32%); }
+.G3 {  background-color: hsl(202, 68%, 32%); }
+.Dachewda {  background-color: hsl(232, 68%, 32%); }
+.P3 {  background-color: hsl(262, 68%, 32%); }
+.P2 {  background-color: hsl(292, 68%, 32%); }
+.P1 {  background-color: hsl(322, 68%, 32%); }
+.P0 {  background-color: hsl(352, 68%, 32%); }
+
+/*
+  --Main: hsl(122, 60%, 30%);
+  --Secondary: hsl(72, 85%, 85%);
+  --Hover: hsl(220, 65%, 60%);
+*/
